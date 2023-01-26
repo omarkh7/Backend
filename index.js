@@ -15,6 +15,7 @@ mongoose.set("strictQuery", true);
 app.use(express.json())
 app.use(express.urlencoded({extended:false}));
 
+app.use('/users',require('./routes/userRoutes'))
 
 connection();
 const conn = mongoose.connection;
