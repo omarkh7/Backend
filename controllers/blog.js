@@ -78,10 +78,38 @@ const deleteblogs=async(req,res)=>{
     }
  }
 
+ //update blogscontentType: "image.jpg" || "image.png" || "image.svg" || "image.jpeg",
+ const updateblogs=async(req, res)=> {
+
+    const blogupd= await blogModels.findById(req.params.id);
+    if(!blogupd){
+        res.status(400)
+        res.send({status:404, 
+           error:true, 
+            message:`Error`})
+    }
+    else{
+
+        blogupd.title=req.body.title,
+        blogupd.image={
+            data:req.file.path,
+            contentType: "image.jpg" || "image.png" || "image.svg" || "image.jpeg",
+        }
+        blogupd.description=req.body.description,
+        blogupd.comment=req.body.comment,
+        blogupd.date=req.body.date
+
+        const upd= await blogupd.save()
+        res.status(200).json(upd);
+    }
+    
+ }
+
 module.exports={
    // router,
     getblogs,
     postblogs,
     deleteblogs,
+    updateblogs,
     upload
 }
