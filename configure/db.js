@@ -5,9 +5,9 @@ mongoose.set("strictQuery", true);
 module.exports = async function connection() {
     try {
         await mongoose.connect(process.env.DB);
-        console.log("connected to database");
+        console.log("Connected to database");
     } catch (error) {
         console.log(error);
-        console.log("could not connect to database");
+        console.log("ERROR! Could not connect to database");
     }
 };
