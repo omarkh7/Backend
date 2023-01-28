@@ -5,22 +5,22 @@ const Schema = mongoose.Schema
 const contactForm = new Schema({
     name:{
         type: 'string',
-        required: true
+        required: false
     },
 
     email: {
         type:'string',
-        required: true
+        required: false
     },
 
     subject:{
         type: 'string',
-        required: true
+        required: false
     },
 
     message:{
         type: 'string',
-        required: true
+        required: false
     }
 },{timestamps:true});
 

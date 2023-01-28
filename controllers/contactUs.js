@@ -11,6 +11,7 @@ const getallcontactinfo = async (req, res) => {
 
 //add new contact
 const postcontact=async(req,res)=>{
+  console.log("zeinabbb")
 try{
   if(!req.body){
       res.status(400).json({message:"Error"})
@@ -22,7 +23,7 @@ try{
       subject:req.body.subject,
       message:req.body.message
           })
-    return res.status(200).json(postcontact)
+    return res.status(200).json(contactt)
   }}
 catch(err){
   console.log("error", err)
