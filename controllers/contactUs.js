@@ -18,10 +18,13 @@ try{
   }
   else{
       const contactt =await contactUs.create({
-      name:req.body.name,
+
+      firstName:req.body.firstName,
+      lastName:req.body.lastName,
       email:req.body.email,
       subject:req.body.subject,
       message:req.body.message
+      
           })
     return res.status(200).json(contactt)
   }}

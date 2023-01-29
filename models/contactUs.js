@@ -3,23 +3,29 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const contactForm = new Schema({
-    name:{
-        type: 'string',
-        required: false
+ 
+    
+    firstName: {
+        type: String,
+        required: true
     },
+    lastName: {
+        type: String,
+        required: true
+    },  
 
     email: {
-        type:'string',
+        type:string,
         required: false
     },
 
     subject:{
-        type: 'string',
+        type: string,
         required: false
     },
 
     message:{
-        type: 'string',
+        type: string,
         required: false
     }
 },{timestamps:true});
