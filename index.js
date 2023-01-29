@@ -4,11 +4,14 @@ const dotenv=require("dotenv")
 dotenv.config();
 const mongoose = require("mongoose");
 const connection = require("./configure/db.js");
-
+const cors = require('cors');
+const bodyparser = require("body-parser");
+const contactUs = require("./routes/contactUs.js");
 
 mongoose.set("strictQuery", true);
 app.use(express.json())
 app.use(express.urlencoded({ extended:false }));
+app.use(cors());
 connection();
 app.use('/cont',contactUs)
 const conn = mongoose.connection;
