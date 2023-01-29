@@ -7,35 +7,26 @@ const getallcontactinfo = async (req, res) => {
   res.status(200).json(contacts);
 };
 
-// get a single contact info
-// const getsinglecontactinfo = async (req, res) => {
-//   const { id } = req.params
-
-//   if (!mongoose.Types.ObjectId.isValid(id)) {
-//     return res.status(404).json({error: 'No such workout'})
-//   }
-
-//   const contactUs = await contactUs.findById(id)
-
-//   if (!contactUs) {
-//     return res.status(404).json({error: 'No such workout'})
-//   }
 
 
 //add new contact
 const postcontact=async(req,res)=>{
+  console.log("zeinabbb")
 try{
   if(!req.body){
       res.status(400).json({message:"Error"})
   }
   else{
       const contactt =await contactUs.create({
-      name:req.body.name,
+
+      firstName:req.body.firstName,
+      lastName:req.body.lastName,
       email:req.body.email,
       subject:req.body.subject,
       message:req.body.message
+      
           })
-    return res.status(200).json(postcontact)
+    return res.status(200).json(contactt)
   }}
 catch(err){
   console.log("error", err)
@@ -43,26 +34,7 @@ catch(err){
 }
 
 
-
-//   res.status(200).json(contactUs)
-// }
-
-// create a new contactInfo
-// const createform = async (req, res) => {
-//   console.log("body ", req.body);
-//   const { name, email, subject, message } = req.body;
-
-//   // add to the database
-//   try {
-//     const new_contactUs = await contactUs.create({name, email, subject, message})
-//     res.status(200).json(new_contactUs);
-//   } catch (error) {
-//     res.status(400).json({ error: error.message })
-//   }
-// }
-
-////////////////////////////////////////////////////////////////
-// delete a contact
+// delete a contact by id
 const deletecontactdetail = async (req, res) => {
   
 
