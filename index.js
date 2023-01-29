@@ -4,8 +4,7 @@ const dotenv=require("dotenv")
 dotenv.config();
 const mongoose = require("mongoose");
 const connection = require("./configure/db.js");
-const express = require("express");
-const app = express();
+
 
 mongoose.set("strictQuery", true);
 app.use(express.json())
