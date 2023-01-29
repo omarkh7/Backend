@@ -21,6 +21,7 @@ try{
 
       firstName:req.body.firstName,
       lastName:req.body.lastName,
+      company:req.body.company,
       email:req.body.email,
       subject:req.body.subject,
       message:req.body.message

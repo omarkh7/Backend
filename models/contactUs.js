@@ -14,6 +14,12 @@ const contactForm = new Schema({
         required: true
     },  
 
+    company: {
+      type: 'string',
+      required: true
+
+    },
+
     email: {
         type:'string',
         required: true
