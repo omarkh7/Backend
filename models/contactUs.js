@@ -6,26 +6,32 @@ const contactForm = new Schema({
  
     
     firstName: {
-        type: 'string',
+        type:String,
         required: true
     },
     lastName: {
-        type: 'string',
+        type:String,
         required: true
     },  
 
+    company: {
+        type:String,
+        required: true
+
+    },
+
     email: {
-        type:'string',
+        type:String,
         required: true
     },
 
     subject:{
-        type: 'string',
+        type:String,
         required: true
     },
 
     message:{
-        type: 'string',
+        type:String,
         required: true
     }
 },{timestamps:true});
