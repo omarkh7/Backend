@@ -1,19 +1,10 @@
-// const dotenv=require("dotenv")
-// dotenv.config();
-// const mongoose = require("mongoose");
-// const connection = require("./configure/db.js");
-// const express = require("express");
-// const app = express();
-
-
-
 import express  from "express";
 import mongoose from "mongoose";
 import dotenv   from 'dotenv';
 import morgan from "morgan";
 import connection from "./configure/db.js";
 import infoRouter from "./routes/info.js";
-// const infoRouter = require ("./routes/info.js");
+
 
 const app = new express();
 mongoose.set("strictQuery", true);
