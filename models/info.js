@@ -5,21 +5,21 @@ const infoSchema = new Schema({
         type: String,
         requierd: true
     },
-    info_descreption: {
+    info_description: {
         type: String,
         requierd: true
     },
     info_image: {
         type: String,
-        requierd: true
+        
     },
     info_date: {
         type: Date,
         requierd: true
     },
-    info_catagory: [{
+    info_category: [{
         type: String,
-        enum: ['Brief Info',' Work Experience', 'Achievements', 'Certifications', 'Talks & Workshops', 'Endorsements & Compliments', 'News & Articles', 'My Articles', 'Writeups', 'Social Media Accounts'],
+        enum: ['Brief Info, Work Experience', 'Achievements', 'Certifications', 'Talks & Workshops', 'Endorsements & Compliments', 'News & Articles', 'My Articles', 'Writeups', 'Social Media Accounts'],
         required: true
     }]
 
