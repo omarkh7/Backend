@@ -38,13 +38,7 @@ const getOne = async (req, res, next) => {
 // creating new info
 
 const post = async (req, res) => {
-  // let body = req.body;
 
-  // let doc = new Info(body);
-  // doc.save((err, response) => {
-  //   if (err) return next(err);
-  //   res.status(200).send({ success: true, response });
-  // });
   try{
     if(!req.body){
         return res.status(400).json({message:"Error"})
