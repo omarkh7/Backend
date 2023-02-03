@@ -5,8 +5,8 @@ const blog=new mongoose.Schema({
             require:true
         },
  image:{
-      data:String,
-      contentType:String
+      type:String,
+      // contentType:String
 },
    description:{
            type:String,

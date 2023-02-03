@@ -1,18 +1,11 @@
 const express = require('express');
-//const router = express.Router();
 const multer= require('multer');
 const path = require('path')
 const blogModels = require('../models/blog.js');
  
 //images
 const storage=multer.diskStorage({
-   //  destination: (req, file, cb) => {
-     //   cb(null, 'Images')
-    // },
-    //filename:(req,file,cb)=>{
-     //    console.log(file)
-     //   cb(null, Date.now() + path.extname(file.originalname));
-   // }
+
    destination:"uploads",
    filename:(req, file, cb)=>{
     cb(null, file.originalname);
@@ -21,9 +14,6 @@ const storage=multer.diskStorage({
 const upload = multer({
     storage: storage
 })
-
-
-
 
 //view all the blogs
 const getblogs=async(req,res)=>{
@@ -51,11 +41,10 @@ const postblogs=async(req,res)=>{
         description:req.body.description,
         comment:req.body.comment,
         date:req.body.date,
-        image: {
-            data:req.file.path,
-            contentType: "image.jpg" || "image.png" || "image.svg" || "image.jpeg",
-        }
+        image:req.file.path,
+   
             })
+            console.log(blogg.image)
        return res.status(200).json(blogg)
     }}
     catch(err){
@@ -91,18 +80,16 @@ const deleteblogs=async(req,res)=>{
     else{
 
         blogupd.title=req.body.title,
-        blogupd.image={
-            data:req.file.path,
-            contentType: "image.jpg" || "image.png" || "image.svg" || "image.jpeg",
-        }
+        blogupd.image=req.file.path,
+            // contentType: "image.jpg" || "image.png" || "image.svg" || "image.jpeg",
+        
         blogupd.description=req.body.description,
         blogupd.comment=req.body.comment,
         blogupd.date=req.body.date
 
         const upd= await blogupd.save()
         res.status(200).json(upd);
-    }
-    
+    } 
  }
 
 module.exports={

@@ -13,9 +13,9 @@ const {getblogs,postblogs,deleteblogs,upload, updateblogs}=require("../controlle
 
 
 router.get("/getblog",getblogs)
-router.post("/postblog",upload.single("BlogImage"),postblogs)
+router.post("/postblog",upload.single("image"),postblogs)
 router.delete("/deleteblog/:id",deleteblogs)
-router.put("/updateblog/:id",upload.single("BlogImage"),updateblogs)
+router.put("/updateblog/:id",upload.single("image"),updateblogs)
 
 
 
