@@ -1,6 +1,6 @@
 const express = require('express');
 const multer= require('multer');
-const path = require('path')
+const path = require('path');
 const blogModels = require('../models/blog.js');
  
 //images
