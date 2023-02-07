@@ -18,18 +18,22 @@ app.use(express.json())
 app.use(express.urlencoded({ extended:false }));
 app.use(cors());
 connection();
-app.use('/cont',contactUs)
 
 const conn = mongoose.connection;
+app.use('/users',require('./routes/userRoutes'));
+
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended: true}));
 app.use("/uploads", express.static('uploads'))
 
 
 
+
 app.use("/info", infoRouter);
 app.use("/blog", blogRouter);
 app.use('/cont',contactUs);
+
+
 
 const port = process.env.PORT || 8000;
 app.listen(port, console.log(`Listening on port ${port}...`));

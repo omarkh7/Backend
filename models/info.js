@@ -21,7 +21,7 @@ const infoSchema = new Schema({
         type: String,
         enum: ['Brief Info', 'Work Experience', 'Achievements', 'Certifications', 'Talks & Workshops', 'Endorsements & Compliments', 'News & Articles', 'My Articles', 'Writeups', 'Social Media Accounts'],
         required: true
-    }]
+    }]  
 
 },
     {

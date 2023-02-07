@@ -38,7 +38,7 @@ const getOne = async (req, res, next) => {
 // creating new info
 
 const post = async (req, res) => {
-
+console.log(req.file)
   try{
     if(!req.body){
         return res.status(400).json({message:"Error"})
@@ -106,5 +106,5 @@ module.exports = {
   post,
   updateInfo,
   deleteInfo,
-  upload
+  upload,
 };
