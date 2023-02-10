@@ -37,7 +37,6 @@ const getOne = async (req, res, next) => {
 // creating new info
 
 const post = async (req, res) => {
-  // let body = req.body;
 
   // let doc = new Info(body);
   // doc.save((err, response) => {

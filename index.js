@@ -24,8 +24,8 @@ connection();
 const conn = mongoose.connection;
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended: true}));
-app.use("/uploads", express.static('uploads'))
-app.use('/uploads', express.static(path.join(__dirname, 'public')))
+app.use("/uploads", express.static('uploads'));
+app.use("/blog/getblog/uploads",express.static('uploads'));
 
 
 

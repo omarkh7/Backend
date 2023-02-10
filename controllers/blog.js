@@ -35,12 +35,12 @@ const postblogs=async(req,res)=>{
         return res.status(400).json({message:"Error"})
     }
     else{
-        console.log(req.file.path)
         const blogg=await blogModels.create({
         title:req.body.title,
         description:req.body.description,
         comment:req.body.comment,
         date:req.body.date,
+        blog_url:req.body.blog_url,
         image:req.file.path,
    
             })
@@ -85,7 +85,8 @@ const deleteblogs=async(req,res)=>{
         
         blogupd.description=req.body.description,
         blogupd.comment=req.body.comment,
-        blogupd.date=req.body.date
+        blogupd.date=req.body.date,
+        blogupd.blog_url=req.body.blog_url
 
         const upd= await blogupd.save()
         res.status(200).json(upd);
