@@ -8,6 +8,7 @@ const multer = require('multer');
 const cors = require('cors');
 const bodyparser = require("body-parser");
 
+
 const contactUs = require("./routes/contactUs.js");
 const infoRouter = require("./routes/info.js")
 const blogRouter = require("./routes/blog.js")
@@ -23,7 +24,8 @@ app.use('/cont',contactUs)
 const conn = mongoose.connection;
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended: true}));
-app.use("/uploads", express.static('uploads'))
+app.use("/uploads", express.static('uploads'));
+app.use("/blog/getblog/uploads",express.static('uploads'));
 
 
 

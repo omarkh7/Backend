@@ -38,13 +38,7 @@ const getOne = async (req, res, next) => {
 // creating new info
 
 const post = async (req, res) => {
-  // let body = req.body;
 
-  // let doc = new Info(body);
-  // doc.save((err, response) => {
-  //   if (err) return next(err);
-  //   res.status(200).send({ success: true, response });
-  // });
   try{
     if(!req.body){
         return res.status(400).json({message:"Error"})
@@ -55,6 +49,7 @@ const post = async (req, res) => {
       info_description:req.body.info_description,
       info_category:req.body.info_category,
       info_date:req.body.info_date,
+      info_url: req.body.info_url,
       info_image:req.file.path,
  
           })
@@ -85,7 +80,8 @@ else{
   
   info.info_description=req.body.info_description,
   info.info_category=req.body.info_category,
- info.info_date=req.body.info_date
+ info.info_date=req.body.info_date,
+ info.info_url=req.body.info_url
 
  const upd= await info.save()
  res.status(200).json(upd);
