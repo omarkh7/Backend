@@ -75,7 +75,7 @@ if(!info){
 else{
 
   info.info_title=req.body.info_title,
-  info.info_image=req.file.path,
+  // info.info_image=req.file.path,
   
   info.info_description=req.body.info_description,
   info.info_category=req.body.info_category,
