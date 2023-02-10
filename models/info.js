@@ -15,7 +15,6 @@ const infoSchema = new Schema({
     },
     info_date: {
         type: Date,
-        requierd: true
     },
     info_category: [{
         type: String,
