@@ -70,7 +70,7 @@ const updateInfo = async (req, res) => {
     throw new Error("Info not Found");
   } else {
     (info.info_title = req.body.info_title),
-      (info.info_image = req.file.path),
+       (info.info_image= req.file ? req.file.path : null),
       (info.info_description = req.body.info_description),
       (info.info_category = req.body.info_category),
       (info.info_date = req.body.info_date);
