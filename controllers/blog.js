@@ -41,8 +41,7 @@ const postblogs=async(req,res)=>{
         comment:req.body.comment,
         date:req.body.date,
         blog_url:req.body.blog_url,
-        image:req.file.path,
-   
+        image: req.file ? (req.path ? req.file.path : null) : null,   
             })
             console.log(blogg.image)
        return res.status(200).json(blogg)
@@ -80,7 +79,8 @@ const deleteblogs=async(req,res)=>{
     else{
 
         blogupd.title=req.body.title,
-        blogupd.image=req.file.path,
+        blogupd.image= req.file ? (req.path ? req.file.path : null) : null,   
+
             // contentType: "image.jpg" || "image.png" || "image.svg" || "image.jpeg",
         
         blogupd.description=req.body.description,

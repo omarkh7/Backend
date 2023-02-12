@@ -52,7 +52,7 @@ const post = async (req, res) => {
         info_description: req.body.info_description,
         info_category: req.body.info_category,
         info_date: req.body.info_date,
-        info_image: req.file ? req.file.path : null,
+        info_image: req.file ? (req.path ? req.file.path : null) : null,   
       });
       console.log(infoo.info_image);
       return res.status(200).json(infoo);
@@ -70,7 +70,7 @@ const updateInfo = async (req, res) => {
     throw new Error("Info not Found");
   } else {
     (info.info_title = req.body.info_title),
-       (info.info_image= req.file ? req.file.path : null),
+       (info. info_image= req.file ? (req.path ? req.file.path : null) : null),   
       (info.info_description = req.body.info_description),
       (info.info_category = req.body.info_category),
       (info.info_date = req.body.info_date);

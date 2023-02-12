@@ -2,12 +2,12 @@ const mongoose = require("mongoose");
 const blog=new mongoose.Schema({
 title:{
             type:String,
-            required:true
+            // required:true
         },
  image:String,
    description:{
            type:String,
-           required:true
+         //   required:true
         },
    comment:{
            type:String,
